@@ -2,13 +2,15 @@
 
 **PC only.** This tool is intended for **Oblivion OG on PC** and **Oblivion Remastered on PC**. Xbox, PlayStation, Nintendo, and other consoles are **not** supported. Xbox 360 `CON ` container saves are rejected.
 
+**Highly experimental.** Bugs are likely. Results can vary by save, load order, and Remastered patch. Back up **both** original Oblivion character saves (`Documents\My Games\Oblivion\Saves`) and Oblivion Remastered character saves (`Documents\My Games\Oblivion Remastered\Saved\SaveGames`) before you generate `migrate.txt` or run `exec migrate.txt`.
+
 Unofficial tool that reads an original 2006 Oblivion PC `.ess` save and writes a Remastered **console batch** (`migrate.txt`). You create a new Remastered character on PC, then run `exec migrate.txt` in the in-game console.
 
 This is **not** a save-file converter. It does **not** write or patch a Remastered `.sav`. Original saves are TES4 (`TES4SAVEGAME`); Remastered saves are Unreal Engine **GVAS**. A byte-for-byte transplant is not possible. Bethesda does not support official save transfer.
 
 Cyrodiil itself stays a mostly fresh Remastered world. The script restores **character data** (stats, gear deltas, spells, factions, discovered map markers, journal stages) onto whatever cell you are standing in.
 
-**Not affiliated with Bethesda, ZeniMax, or Microsoft.** Use at your own risk. Back up your Remastered saves first.
+**Not affiliated with Bethesda, ZeniMax, or Microsoft.** Use at your own risk.
 
 ## Requirements
 
@@ -32,6 +34,13 @@ FormID high bytes are remapped from the original save’s plugin list onto Remas
 Created objects (`0xFF......` — custom spells, custom enchantments) are dropped.
 
 ## Warning before you start
+
+This tool is **highly experimental**. Bugs are likely. Copy your character saves somewhere safe before you start:
+
+- Original Oblivion `.ess`: `Documents\My Games\Oblivion\Saves`
+- Remastered: `Documents\My Games\Oblivion Remastered\Saved\SaveGames`
+
+Also:
 
 - Using the console **disables achievements** on that Remastered save unless you already use an achievement unblocker.
 - `additem` **duplicates inventory** if you `exec migrate.txt` more than once on the same character.
